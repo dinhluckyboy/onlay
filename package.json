@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "minify": "terser onlay.js -o onlay.min.js && csso onlay.css -o onlay.min.css"
+  },
+  "dependencies": {
+    "csso-cli": "^4.0.2",
+    "terser": "^5.46.0"
+  }
+}
