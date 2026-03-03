@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onlay Library</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.css"
+    />
+  </head>
+  <body>
+    <h1 id="title">Onlay Library</h1>
+    <template id="model-1">
+      <h2>Model</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime facilis
+        molestiae vel, repudiandae distinctio obcaecati illum, veritatis dolorem
+        aspernatur, blanditiis optio at voluptas omnis consequuntur ipsa. Quod
+        dicta molestiae fugit odit laborum eligendi, quasi, veritatis atque rem,
+        itaque qui? Alias, obcaecati dignissimos aperiam dolore illum excepturi
+        eligendi aspernatur debitis, rem iure rerum nobis magni. Reiciendis, ut
+        distinctio, voluptatum quasi cupiditate sint facere doloremque quas
+        consectetur natus placeat porro omnis nostrum illo. Accusamus animi a
+        voluptate porro amet, molestiae cum? Magni voluptas dignissimos facilis
+      </p>
+    </template>
+    <script src="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.js"></script>
+    <script>
+      const title = document.querySelector("#title");
+      const model = new Onlay({
+        templateId: "model-1",
+        footer: true,
+      });
+      title.onclick = () => {
+        model.open();
+      };
+    </script>
+  </body>
+</html>
