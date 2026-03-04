@@ -4,69 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onlay Library</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.css"
-    />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.css"/> -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./onlay.min.css" />
   </head>
   <body>
     <!-- header  -->
-    <header>
-      <h1 class="title">Onlay.js</h1>
-      <p class="modal__desc">
-        Hướng dẫn sử dụng thư viện Onlay.js (Modal) được code hoàn toàn bằng
-        Javascript
-      </p>
+    <header id="modal__header">
+      <div class="modal__container">
+        <h1 class="title">Onlay.js</h1>
+        <p class="modal__desc">
+          Hướng dẫn sử dụng thư viện Onlay.js (Modal) được code hoàn toàn bằng
+          Javascript
+        </p>
+      </div>
     </header>
     <!-- main  -->
-    <main>
+    <main id="modal__main">
       <!-- benefits  -->
-      <section id="benefits">
-        <h2 class="title">Lợi ích</h2>
-        <p class="modal__desc">
-          Giúp ẩn hiện Modal, có thể tái sử dụng code giúp tiết kiệm thời gian
-        </p>
+      <section id="modal__benefits" class="modal__section">
+        <div class="modal__container">
+          <h2 class="modal__title">Lợi ích</h2>
+          <p class="modal__desc">
+            Giúp ẩn hiện Modal, có thể tái sử dụng code giúp tiết kiệm thời gian
+          </p>
+        </div>
       </section>
       <!-- examples  -->
-      <section id="examples">
-        <h2 class="title">Ví dụ trực quan</h2>
-        <button class="modal__btn">Basic Modals</button>
-        <button class="modal__btn">Modal With Buttons</button>
-        <button class="modal__btn">Large Content Modal</button>
-        <button class="modal__btn">Multiple Modals</button>
-        <button class="modal__btn">YouTube Embed Modal</button>
+      <section id="modal__examples" class="modal__section">
+        <div class="modal__container">
+          <h2 class="modal__title">Ví dụ trực quan</h2>
+          <p class="modal__desc">
+            Click vào button dưới đây để xem ví dụ chi tiết &#128071;
+          </p>
+          <div class="modal__btns">
+            <button class="modal__btn modal__btn--basic">Basic Modals</button>
+            <button class="modal__btn modal__btn--button">
+              Modal With Buttons
+            </button>
+            <button class="modal__btn modal__btn--large">
+              Large Content Modal
+            </button>
+            <button class="modal__btn modal__btn--multiple">
+              Multiple Modals
+            </button>
+            <button class="modal__btn modal__btn--embed">
+              YouTube Embed Modal
+            </button>
+          </div>
+        </div>
       </section>
       <!-- usage  -->
-      <section id="usage">
-        <h2 class="title">Cách sử dụng</h2>
+      <section id="modal__usage" class="modal__section">
+        <div class="modal__container">
+          <h2 class="modal__title">Cách sử dụng</h2>
+        </div>
       </section>
     </main>
     <!-- footer  -->
-    <footer></footer>
-    <template id="model-1">
-      <h2>Model</h2>
+    <footer id="modal__footer"></footer>
+    <!-- basic modal  -->
+    <template id="modal__onlay-basic">
+      <h2>Basic Modal</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime facilis
-        molestiae vel, repudiandae distinctio obcaecati illum, veritatis dolorem
-        aspernatur, blanditiis optio at voluptas omnis consequuntur ipsa. Quod
-        dicta molestiae fugit odit laborum eligendi, quasi, veritatis atque rem,
-        itaque qui? Alias, obcaecati dignissimos aperiam dolore illum excepturi
-        eligendi aspernatur debitis, rem iure rerum nobis magni. Reiciendis, ut
-        distinctio, voluptatum quasi cupiditate sint facere doloremque quas
-        consectetur natus placeat porro omnis nostrum illo. Accusamus animi a
-        voluptate porro amet, molestiae cum? Magni voluptas dignissimos facilis
+        Đây là Basic Modal, bạn có thể tắt modal bằng cách nhấn vào button close
+        ở góc trên bên phải, cũng có thể tắt modal bằng cách nhấn vào lớp phủ mờ
+        bên ngoài modal (overlay), hoặc cũng có thể tắt modal bằng cách nhấn
+        phím Esc (Escape) trên bàn phím...
       </p>
     </template>
-    <script src="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.js"></script>
-    <script>
-      const title = document.querySelector("#title");
-      const model = new Onlay({
-        templateId: "model-1",
-        footer: true,
-      });
-      title.onclick = () => {
-        model.open();
-      };
-    </script>
+    <!-- modal with button  -->
+    <template id="modal__onlay-button">
+      <h2>Modal With Buttons</h2>
+      <br />
+      <p>
+        Giống Basic Modal, bạn có thể tắt modal bằng cách nhấn vào button close
+        ở góc trên bên phải, cũng có thể tắt modal bằng cách nhấn phím Esc
+        (Escape) trên bàn phím, nhưng không thể tắt modal bằng cách nhấn vào lớp
+        phủ mờ bên ngoài modal (overlay) do tôi đã tắt tính năng này vì tôi muốn
+        người dùng tập trung vào đọc nội dung và xác nhận ở nút button, tránh
+        trường hợp người dùng bấm nhầm
+      </p>
+      <br />
+      <p>
+        Ở Modal With Buttons, khi new Onlay() ở js sẽ có thêm option footer là
+        true, bạn sẽ có thể thêm button vào footer của modal, ở modal này tôi đã
+        thêm sẵn 2 button là Cancel và Agree, khi footer là true, bạn có thể add
+        button, set lại content cho footer, tôi sẽ hướng dẫn cách sử dụng chi
+        tiết ở phần sau nên bạn yên tâm nhé!
+      </p>
+    </template>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.js"></script> -->
+    <script src="./onlay.min.js"></script>
+    <script src="./assets/main.js"></script>
   </body>
 </html>
