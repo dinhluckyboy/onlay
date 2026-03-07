@@ -24,7 +24,7 @@
       <!-- benefits  -->
       <section id="modal__benefits" class="modal__section">
         <div class="modal__container">
-          <h2 class="modal__title">Lợi ích</h2>
+          <h2 class="modal__title">1. Lợi ích</h2>
           <p class="modal__desc">
             Giúp ẩn hiện Modal, có thể tái sử dụng code giúp tiết kiệm thời gian
           </p>
@@ -33,7 +33,7 @@
       <!-- examples  -->
       <section id="modal__examples" class="modal__section">
         <div class="modal__container">
-          <h2 class="modal__title">Ví dụ trực quan</h2>
+          <h2 class="modal__title">2. Ví dụ trực quan</h2>
           <p class="modal__desc">
             Click vào button dưới đây để xem ví dụ chi tiết &#128071;
           </p>
@@ -51,33 +51,38 @@
             <button class="modal__btn modal__btn--embed">
               YouTube Embed Modal
             </button>
+            <button class="modal__btn modal__btn--persistent">
+              Persistent Modal
+            </button>
+            <button class="modal__btn modal__btn--outside">
+              Input Content Outside
+            </button>
           </div>
         </div>
       </section>
       <!-- usage  -->
       <section id="modal__usage" class="modal__section">
         <div class="modal__container">
-          <h2 class="modal__title">Cách sử dụng</h2>
+          <h2 class="modal__title">3. Cách sử dụng</h2>
         </div>
       </section>
     </main>
     <!-- footer  -->
     <footer id="modal__footer"></footer>
-    <!-- basic modal  -->
-    <template id="modal__onlay-basic">
-      <h2>Basic Modal</h2>
-      <p>
+    <!-- 1 basic modal  -->
+    <template id="modal__onlay-basic" class="template__modal">
+      <h2 class="template__title">Basic Modal</h2>
+      <p class="template__desc">
         Đây là Basic Modal, bạn có thể tắt modal bằng cách nhấn vào button close
         ở góc trên bên phải, cũng có thể tắt modal bằng cách nhấn vào lớp phủ mờ
         bên ngoài modal (overlay), hoặc cũng có thể tắt modal bằng cách nhấn
         phím Esc (Escape) trên bàn phím...
       </p>
     </template>
-    <!-- modal with button  -->
-    <template id="modal__onlay-button">
-      <h2>Modal With Buttons</h2>
-      <br />
-      <p>
+    <!-- 2 modal with button  -->
+    <template id="modal__onlay-button" class="template__modal">
+      <h2 class="template__title">Modal With Buttons</h2>
+      <p class="template__desc">
         Giống Basic Modal, bạn có thể tắt modal bằng cách nhấn vào button close
         ở góc trên bên phải, cũng có thể tắt modal bằng cách nhấn phím Esc
         (Escape) trên bàn phím, nhưng không thể tắt modal bằng cách nhấn vào lớp
@@ -85,8 +90,7 @@
         người dùng tập trung vào đọc nội dung và xác nhận ở nút button, tránh
         trường hợp người dùng bấm nhầm
       </p>
-      <br />
-      <p>
+      <p class="template__desc">
         Ở Modal With Buttons, khi new Onlay() ở js sẽ có thêm option footer là
         true, bạn sẽ có thể thêm button vào footer của modal, ở modal này tôi đã
         thêm sẵn 2 button là Cancel và Agree, khi footer là true, bạn có thể add
@@ -94,8 +98,142 @@
         tiết ở phần sau nên bạn yên tâm nhé!
       </p>
     </template>
+    <!-- 3 Large Content Modal  -->
+    <template id="modal__onlay-large" class="template__modal">
+      <h2 class="template__title">Large Content Modal</h2>
+      <p class="template__desc">
+        Giống Basic Modal, bạn có thể tắt modal bằng cách nhấn vào button close
+        ở góc trên bên phải, cũng có thể tắt modal bằng cách nhấn vào lớp phủ mờ
+        bên ngoài modal (overlay), hoặc cũng có thể tắt modal bằng cách nhấn
+        phím Esc (Escape) trên bàn phím...
+      </p>
+      <p class="template__desc">
+        Điểm khác biệt duy nhất ở đây là khi nội dung content của modal nhiều
+        lên, chúng tôi đã css sẵn trong thư viện để nội dung hiện thanh cuộn và
+        hiện thị hợp lý trên giao diện người dùng
+      </p>
+      <p class="template__desc">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt nemo
+        necessitatibus, aliquid officia itaque, corrupti voluptate odio
+        voluptates cumque libero in quam, aspernatur consequuntur quod vel dicta
+        sunt accusantium! Facilis.
+      </p>
+      <p class="template__desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam amet
+        eaque corporis debitis exercitationem omnis aliquid obcaecati enim dolor
+        corrupti tempora fuga ipsum, animi odit. Nemo at placeat consequatur non
+        nesciunt vero. Natus soluta incidunt nemo distinctio consequuntur
+        quibusdam praesentium provident? Minima et qui autem.
+      </p>
+      <p class="template__desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quisquam
+        velit nemo, asperiores, enim hic sint pariatur natus voluptatem tenetur
+        facilis incidunt eos dolorum eius laborum error consectetur saepe id
+        dolores maxime nesciunt deleniti atque iusto! Suscipit impedit, ut,
+        nostrum voluptates sed, fuga commodi dignissimos veniam ducimus
+        temporibus porro totam deleniti dolores modi culpa quisquam ipsam.
+        Tenetur pariatur sequi ipsam.
+      </p>
+      <p class="template__desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+        reiciendis fugiat, odit at, dolores sequi ratione porro quasi quo qui
+        possimus veniam provident aspernatur harum consequatur maxime! At
+        voluptatem eveniet veniam ratione, nesciunt facere sit placeat illum
+        repudiandae a, natus ex animi officia? Dicta dolore deleniti soluta
+        temporibus, vitae impedit dignissimos molestias quaerat corporis est
+        accusamus voluptates dolorum fuga ipsa ea cupiditate nobis explicabo
+        voluptas illo blanditiis ratione debitis rerum. Ratione quod et ullam
+        suscipit voluptatum. Tenetur delectus optio voluptatem tempore, natus,
+        esse et voluptate mollitia, odio sunt consectetur? Consequatur tempore
+        officiis, temporibus ipsum non eius? Voluptatum qui voluptate
+        reiciendis.
+      </p>
+      <p class="template__desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis facere
+        natus nisi in eos inventore ut cupiditate perferendis nobis eius
+        incidunt, excepturi suscipit! Quod dolorem quas unde minima ratione
+        aperiam voluptatum! Sit dolorem obcaecati incidunt? Corrupti dignissimos
+        incidunt quisquam aspernatur harum nihil, culpa ut sed dolorem itaque,
+        quam non delectus explicabo perspiciatis, expedita repellat aliquid
+        tempore voluptate consequatur labore? Explicabo maxime cum, sunt
+        corporis reiciendis earum illo voluptates asperiores, ipsam dolore
+        laboriosam iste architecto veniam, quia ipsa necessitatibus iusto
+        commodi beatae! Quasi officiis earum vel itaque tempora inventore nihil
+        expedita beatae recusandae tenetur officia illo sint, suscipit ipsum
+        saepe ut repellendus. Dolore, nemo molestiae, distinctio assumenda,
+        obcaecati architecto iure consequatur incidunt in dolorum eligendi
+        consequuntur eius veritatis. Soluta asperiores magnam ullam quo
+        praesentium natus, fuga esse provident facilis perspiciatis. Quasi
+        quisquam, iure quidem earum accusamus architecto. A cumque velit
+        molestias vero impedit laborum expedita libero totam maiores voluptatum
+        quos, voluptate quisquam dolorem error esse ab sunt nam perferendis
+        autem eaque repellat hic corporis laboriosam obcaecati. Aspernatur
+        libero soluta ratione molestias aperiam omnis recusandae iste corporis
+        eos architecto provident nesciunt mollitia totam culpa magnam deleniti
+        voluptatem quibusdam quaerat odio tenetur voluptates fugiat, obcaecati
+        esse consequatur. Similique quidem enim aspernatur quo optio.
+      </p>
+    </template>
+    <!-- 4 Multiple Modals  -->
+    <template id="modal__onlay-multiple" class="template__modal">
+      <h2 class="template__title">Multiple Modals</h2>
+      <p class="template__desc">
+        Đây là Multiple Modals, bạn có thể mở lồng ghép 1 modal bên bên một
+        modal khác mà không gây ra lỗi
+      </p>
+      <p class="template__desc">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis quis aut
+        iste? Explicabo perferendis quidem neque quaerat consectetur atque.
+        Deleniti dolorem aspernatur blanditiis accusantium ab, excepturi minima
+        temporibus modi eveniet quisquam perspiciatis dicta mollitia nisi
+        dolorum labore, provident qui laboriosam nulla, ex assumenda est alias
+        voluptatum nemo aliquam. Pariatur dolore beatae omnis ipsa distinctio,
+        in recusandae harum esse repellat dolores blanditiis, aliquam minus iure
+        voluptas quae adipisci eaque numquam! Enim distinctio temporibus quidem
+        corrupti ad placeat reiciendis vel. Vitae placeat aliquid incidunt
+      </p>
+      <button
+        class="modal__btn"
+        onclick="{modalBasic.open()}"
+        style="margin-top: 12px"
+      >
+        Basic Modal
+      </button>
+    </template>
+    <!-- 5 Youtube Embed Modal  -->
+    <template id="modal__onlay-embed" class="template__modal">
+      <!-- <h2 class="template__title">Youtube Embed Modal</h2> -->
+      <div class="template__video">
+        <iframe
+          width="100%"
+          height="300px"
+          src="https://www.youtube.com/embed/bpYspk9Z3as?list=RDbpYspk9Z3as"
+          title="XUẤT GIÁ - KEYO ( JENA COVER ) || MUSIC VIDEO  | Ngồi buồn một mình đếm lá đếm hoa..."
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </template>
+    <!-- 6 Persistent Modal  -->
+    <template id="modal__onlay-persistent" class="template__modal">
+      <h2 class="template__title">Persistent Modal</h2>
+      <p class="template__desc">
+        Với Modal này, khi tắt Madal thì code vẫn sẽ còn trong DOM, Modal vẫn sẽ
+        giữ trạng thái cuộn hoặc text input nếu bạn đang nhập chưa xong
+      </p>
+      <p class="template__desc">
+        <textarea
+          name=""
+          id=""
+          class="template__textarea"
+          placeholder="Write something..."
+        ></textarea>
+      </p>
+    </template>
     <!-- <script src="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.js"></script> -->
-    <script src="./onlay.min.js"></script>
+    <script src="./onlay.js"></script>
     <script src="./assets/main.js"></script>
   </body>
 </html>

@@ -1,6 +1,16 @@
-Onlay.elements = []; // array save model open current
+Onlay.elements = []; // array save modal open current
 
 function Onlay(option = {}) {
+  if (!option.templateId && !option.content) {
+    console.error("Please provide the templateId or content.");
+    return;
+  }
+
+  if (option.templateId && option.content) {
+    console.warn(
+      "If both templateId and content are available, then only content will be selected."
+    );
+  }
   // get content... from option
   this.opt = Object.assign(
     {
@@ -11,14 +21,17 @@ function Onlay(option = {}) {
       // onOpen,
       // onClose,
       footer: false,
+      // content,
     },
     option
   );
 
-  this.template = document.querySelector(`#${this.opt.templateId}`);
-  if (!this.template) {
-    console.error("template id none exits");
-    return;
+  if (!this.opt.content) {
+    this.template = document.querySelector(`#${this.opt.templateId}`);
+    if (!this.template) {
+      console.error("Template id none exits");
+      return;
+    }
   }
   this._allowButtonClose = this.opt.closeMethods.includes("button");
   this._allowBackdropClose = this.opt.closeMethods.includes("overlay");
@@ -30,18 +43,24 @@ function Onlay(option = {}) {
 // -----------------
 
 Onlay.prototype._createElement = function () {
-  const content = this.template.content.cloneNode(true);
+  if (!this.opt.content) {
+    this._content = this.template.content.cloneNode(true);
+  } else {
+    this._content = document.createElement("div");
+    this._content.innerHTML = this.opt.content;
+  }
+
   // create element
   this._backdrop = document.createElement("div");
   this._backdrop.className = "onlay__backdrop";
 
-  const container = document.createElement("div");
-  container.className = "onlay__container";
+  this._container = document.createElement("div");
+  this._container.className = "onlay__container";
 
   if (this.opt.cssClass.length > 0) {
     this.opt.cssClass.forEach((className) => {
       if (typeof className === "string") {
-        container.classList.add(className);
+        this._container.classList.add(className);
       }
     });
   } // add css class to container
@@ -50,30 +69,30 @@ Onlay.prototype._createElement = function () {
     const btnClose = this._createButton("&times;", "onlay__close", () =>
       this.close()
     );
-    container.append(btnClose); // append element
+    this._container.append(btnClose); // append element
   }
 
-  const modelContent = document.createElement("div");
-  modelContent.className = "onlay__content";
+  this._modalContent = document.createElement("div");
+  this._modalContent.className = "onlay__content";
 
   // append element
-  modelContent.append(content);
-  container.append(modelContent);
-  this._backdrop.append(container);
+  this._modalContent.append(this._content);
+  this._container.append(this._modalContent);
+  this._backdrop.append(this._container);
   document.body.append(this._backdrop);
 
   // add footer
   if (this.opt.footer) {
-    this._modelFooter = document.createElement("div");
-    this._modelFooter.className = "onlay__footer";
+    this._modalFooter = document.createElement("div");
+    this._modalFooter.className = "onlay__footer";
     this._renderFooterContent(); // render footer content
     this._renderButton(); // render button to footer
-    container.append(this._modelFooter); // add footer to container
+    this._container.append(this._modalFooter); // add footer to container
   }
 };
 
 Onlay.prototype.open = function () {
-  Onlay.elements.push(this); // push model open current
+  Onlay.elements.push(this); // push modal open current
 
   if (!this._backdrop) {
     this._createElement();
@@ -95,8 +114,8 @@ Onlay.prototype.open = function () {
 
   // handel escape close
   this._handelEscapeClose = (e) => {
-    const lastModel = Onlay.elements[Onlay.elements.length - 1]; // last model
-    if (e.key === "Escape" && this === lastModel) {
+    const lastmodal = Onlay.elements[Onlay.elements.length - 1]; // last modal
+    if (e.key === "Escape" && this === lastmodal) {
       this.close();
     }
   };
@@ -116,6 +135,15 @@ Onlay.prototype.open = function () {
   return this._backdrop;
 };
 
+Onlay.prototype.setContent = function (content) {
+  if (typeof content !== "string") {
+    console.error("Content must be a string");
+    return;
+  }
+  this._content = content;
+  this._modalContent.innerHTML = this._content;
+};
+
 Onlay.prototype.close = function (destroy = this.opt.destroyOnClose) {
   if (this._allowEscapeClose) {
     document.removeEventListener("keydown", this._handelEscapeClose);
@@ -131,7 +159,7 @@ Onlay.prototype.close = function (destroy = this.opt.destroyOnClose) {
     if (destroy && this._backdrop) {
       this._backdrop.remove();
       this._backdrop = null;
-      this._modelFooter = null;
+      this._modalFooter = null;
     }
 
     // onClose
@@ -194,15 +222,15 @@ Onlay.prototype._createButton = function (title, className, callback) {
 };
 
 Onlay.prototype._renderButton = function () {
-  if (this._footerButton.length > 0 && this._modelFooter) {
+  if (this._footerButton.length > 0 && this._modalFooter) {
     this._footerButton.forEach((btn) => {
-      this._modelFooter.append(btn);
+      this._modalFooter.append(btn);
     });
   }
 }; // render button to footer
 
 Onlay.prototype._renderFooterContent = function () {
-  if (this._modelFooter && this._footerContent) {
-    this._modelFooter.innerHTML = this._footerContent;
+  if (this._modalFooter && this._footerContent) {
+    this._modalFooter.innerHTML = this._footerContent;
   }
 }; // render footer content
