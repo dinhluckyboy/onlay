@@ -8,7 +8,7 @@ function Onlay(option = {}) {
 
   if (option.templateId && option.content) {
     console.warn(
-      "If both templateId and content are available, then only content will be selected."
+      "Both 'templateId' and 'content' provided. 'content' will be used."
     );
   }
   // get content... from option
@@ -38,6 +38,7 @@ function Onlay(option = {}) {
   this._allowEscapeClose = this.opt.closeMethods.includes("escape");
 
   this._footerButton = [];
+  this._content;
 }
 
 // -----------------
@@ -141,8 +142,16 @@ Onlay.prototype.setContent = function (content) {
     return;
   }
   this._content = content;
-  this._modalContent.innerHTML = this._content;
+  console.log(this._content);
+  if (this._backdrop) {
+    this._modalContent.innerHTML = this._content;
+  } else {
+    this._createElement();
+    this._content = content;
+    this._modalContent.innerHTML = this._content;
+  }
 };
+console.log(this._modalContent);
 
 Onlay.prototype.close = function (destroy = this.opt.destroyOnClose) {
   if (this._allowEscapeClose) {
