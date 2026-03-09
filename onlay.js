@@ -17,6 +17,7 @@ function Onlay(option = {}) {
       //  templateId,
       closeMethods: ["button", "overlay", "escape"],
       destroyOnClose: true,
+      enableScrollLock: true,
       cssClass: [],
       // onOpen,
       // onClose,
@@ -125,10 +126,12 @@ Onlay.prototype.open = function () {
     document.addEventListener("keydown", this._handelEscapeClose);
   }
 
-  // disable scroll
-  document.body.classList.add("onlay--no-scroll");
-  //padding right scroll bar
-  document.body.style.paddingRight = this._getScrollBar() + "px";
+  if (this.opt.enableScrollLock) {
+    // disable scroll
+    document.body.classList.add("onlay--no-scroll");
+    //padding right scroll bar
+    document.body.style.paddingRight = this._getScrollBar() + "px";
+  }
 
   // onOpen
   this._onTransitionEnd(this.opt.onOpen);
@@ -175,7 +178,7 @@ Onlay.prototype.close = function (destroy = this.opt.destroyOnClose) {
     if (typeof this.opt.onClose === "function") {
       this.opt.onClose();
     }
-    if (!Onlay.elements.length) {
+    if (!Onlay.elements.length && this.opt.enableScrollLock) {
       // enable scroll
       document.body.classList.remove("onlay--no-scroll");
       //remove padding right scroll bar

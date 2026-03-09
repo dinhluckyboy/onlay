@@ -136,21 +136,36 @@ a {
   word-break: break-word;
 }
 
-.modal__option {
+.modal__table {
+  width: 100%;
   margin-top: 12px;
   border-collapse: collapse;
 }
 
-.modal__option--title {
-  padding: 10px;
+.modal__table--title {
+  padding: 15px 20px;
+  text-align: left;
   background-color: var(--background-color-primary);
   border-spacing: 10px;
 }
 
-.modal__option td {
-  padding: 10px;
+.modal__table td {
+  padding: 15px 20px;
   border-bottom: 1px solid #ccc;
 }
-.modal__option tr:last-child td {
+.modal__table tr:last-child td {
   border-bottom: none;
+}
+
+#modal__footer {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #2e2e2e;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.modal__footer-link {
+  font-style: normal;
+  text-decoration: underline;
 }

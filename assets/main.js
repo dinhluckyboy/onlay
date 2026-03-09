@@ -2,6 +2,7 @@
 const basicBtn = document.querySelector(".modal__btn--basic");
 const modalBasic = new Onlay({
   templateId: "modal__onlay-basic",
+  enableScrollLock: false,
 });
 basicBtn.onclick = () => {
   modalBasic.open();
@@ -47,6 +48,7 @@ largeContentBtn.onclick = () => {
 const multipleBtn = document.querySelector(".modal__btn--multiple");
 const modalMultiple = new Onlay({
   templateId: "modal__onlay-multiple",
+  enableScrollLock: false,
 });
 multipleBtn.onclick = () => {
   modalMultiple.open();
