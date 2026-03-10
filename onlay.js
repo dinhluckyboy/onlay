@@ -58,7 +58,7 @@ Onlay.prototype._createElement = function () {
 
   // create element
   this._backdrop = document.createElement("div");
-  this._backdrop.className = "onlay__backdrop";
+  this._backdrop.className = "onlay";
 
   this._container = document.createElement("div");
   this._container.className = "onlay__container";
@@ -106,7 +106,7 @@ Onlay.prototype.open = function () {
 
   // show backdrop
   setTimeout(() => {
-    this._backdrop.classList.add("onlay__backdrop--show");
+    this._backdrop.classList.add("onlay--show");
   }, 0);
 
   // handel close event
@@ -170,7 +170,7 @@ Onlay.prototype.close = function (destroy = this.opt.destroyOnClose) {
 
   Onlay.elements.pop(); // remove element last array
 
-  this._backdrop.classList.remove("onlay__backdrop--show");
+  this._backdrop.classList.remove("onlay--show");
 
   this._onTransitionEnd(() => {
     this._backdrop.ontransitionend = null; // gỡ handel sau khi chạy xong
@@ -226,7 +226,13 @@ Onlay.prototype._getScrollBar = function () {
 };
 
 Onlay.prototype.hasScrollBar = function () {
-  return this._scrollTarget.scrollHeight > this._scrollTarget.clientHeight;
+  if ([document.documentElement, document.body].includes(this._scrollTarget)) {
+    return (
+      this._scrollTarget.scrollHeight > this._scrollTarget.clientHeight ||
+      document.documentElement.scrollHeight >
+        document.documentElement.clientHeight
+    );
+  }
 };
 
 Onlay.prototype.setFooterContent = function (html) {

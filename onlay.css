@@ -1,4 +1,4 @@
-.onlay__backdrop {
+.onlay {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -13,12 +13,12 @@
   transition-duration: 0.3s;
 }
 
-.onlay__backdrop--show {
+.onlay--show {
   opacity: 1;
   visibility: visible;
 }
 
-.onlay__backdrop--show .onlay__container {
+.onlay--show .onlay__container {
   transform: translateY(0);
 }
 

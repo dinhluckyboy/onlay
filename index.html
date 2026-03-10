@@ -4,99 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onlay Library</title>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.css"/> -->
+    <!-- highlight code pre  -->
     <link
       href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
       rel="stylesheet"
     />
-    <!-- highlight code  -->
     <link rel="stylesheet" href="./assets/style.css" />
-    <link rel="stylesheet" href="./onlay.min.css" />
+    <link rel="stylesheet" href="./onlay.css" />
   </head>
   <body>
-    <div class="modal__wrapper">
-      <!-- header  -->
-      <header id="modal__header">
+    <!-- header  -->
+    <header id="modal__header">
+      <div class="modal__container">
+        <h1 class="title">
+          <a
+            href="https://github.com/dinhluckyboy/onlay"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Onlay.js</a
+          >
+        </h1>
+        <p class="modal__desc">
+          Hướng dẫn sử dụng thư viện Onlay.js (Modal) được code hoàn toàn bằng
+          Javascript
+        </p>
+      </div>
+    </header>
+    <!-- main  -->
+
+    <main id="modal__main">
+      <!-- benefits  -->
+      <section id="modal__benefits" class="modal__section">
         <div class="modal__container">
-          <h1 class="title">
-            <a
-              href="https://github.com/dinhluckyboy/onlay"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Onlay.js</a
-            >
-          </h1>
+          <h2 class="modal__title">1. Lợi ích</h2>
           <p class="modal__desc">
-            Hướng dẫn sử dụng thư viện Onlay.js (Modal) được code hoàn toàn bằng
-            Javascript
+            Giúp ẩn hiện Modal, có thể tái sử dụng code giúp tiết kiệm thời gian
           </p>
         </div>
-      </header>
-      <!-- main  -->
-
-      <main id="modal__main">
-        <!-- benefits  -->
-        <section id="modal__benefits" class="modal__section">
-          <div class="modal__container">
-            <h2 class="modal__title">1. Lợi ích</h2>
-            <p class="modal__desc">
-              Giúp ẩn hiện Modal, có thể tái sử dụng code giúp tiết kiệm thời
-              gian
-            </p>
+      </section>
+      <!-- examples  -->
+      <section id="modal__examples" class="modal__section">
+        <div class="modal__container">
+          <h2 class="modal__title">2. Ví dụ trực quan</h2>
+          <p class="modal__desc">
+            Click vào button dưới đây để xem ví dụ chi tiết &#128071;
+          </p>
+          <div class="modal__btns">
+            <button class="modal__btn modal__btn--basic">Basic Modals</button>
+            <button class="modal__btn modal__btn--button">
+              Modal With Buttons
+            </button>
+            <button class="modal__btn modal__btn--large">
+              Large Content Modal
+            </button>
+            <button class="modal__btn modal__btn--multiple">
+              Multiple Modals
+            </button>
+            <button class="modal__btn modal__btn--embed">
+              YouTube Embed Modal
+            </button>
+            <button class="modal__btn modal__btn--persistent">
+              Persistent Modal
+            </button>
+            <button class="modal__btn modal__btn--outside">
+              Input Content Outside
+            </button>
           </div>
-        </section>
-        <!-- examples  -->
-        <section id="modal__examples" class="modal__section">
-          <div class="modal__container">
-            <h2 class="modal__title">2. Ví dụ trực quan</h2>
-            <p class="modal__desc">
-              Click vào button dưới đây để xem ví dụ chi tiết &#128071;
-            </p>
-            <div class="modal__btns">
-              <button class="modal__btn modal__btn--basic">Basic Modals</button>
-              <button class="modal__btn modal__btn--button">
-                Modal With Buttons
-              </button>
-              <button class="modal__btn modal__btn--large">
-                Large Content Modal
-              </button>
-              <button class="modal__btn modal__btn--multiple">
-                Multiple Modals
-              </button>
-              <button class="modal__btn modal__btn--embed">
-                YouTube Embed Modal
-              </button>
-              <button class="modal__btn modal__btn--persistent">
-                Persistent Modal
-              </button>
-              <button class="modal__btn modal__btn--outside">
-                Input Content Outside
-              </button>
-            </div>
-          </div>
-        </section>
-        <!-- usage  -->
-        <section id="modal__usage" class="modal__section">
-          <div class="modal__container">
-            <h2 class="modal__title">3. Cách sử dụng</h2>
-            <h3 class="modal__title">Liên kết file từ thư viện</h3>
-            <p class="modal__desc">
-              Dán đoạn mã này để link file css vào phần header của file HTML
-            </p>
-            <pre
-              class="modal__pre"
-            ><code class="modal__code language-html">&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.css&#x22;/&#x3E;</code></pre>
-            <p class="modal__desc">
-              Tiếp thep dán đoạn mã này để link file js vào trước thẻ đóng body
-              của file HTML
-            </p>
-            <pre
-              class="modal__pre"
-            ><code class="modal__code language-html">&#x3C;script src=&#x22;https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.js&#x22;&#x3E;&#x3C;/script&#x3E;</code></pre>
-            <h3 class="modal__title">Khởi tạo modal</h3>
-            <pre
-              class="modal__pre"
-            ><code class="modal__code language-js">// Initialize a new modal
+        </div>
+      </section>
+      <!-- usage  -->
+      <section id="modal__usage" class="modal__section">
+        <div class="modal__container">
+          <h2 class="modal__title">3. Cách sử dụng</h2>
+          <h3 class="modal__title">Liên kết file từ thư viện</h3>
+          <p class="modal__desc">
+            Dán đoạn mã này để link file css vào phần header của file HTML
+          </p>
+          <pre
+            class="modal__pre"
+          ><code class="modal__code language-html">&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.css&#x22;/&#x3E;</code></pre>
+          <p class="modal__desc">
+            Tiếp thep dán đoạn mã này để link file js vào trước thẻ đóng body
+            của file HTML
+          </p>
+          <pre
+            class="modal__pre"
+          ><code class="modal__code language-html">&#x3C;script src=&#x22;https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.js&#x22;&#x3E;&#x3C;/script&#x3E;</code></pre>
+          <h3 class="modal__title">Khởi tạo modal</h3>
+          <pre
+            class="modal__pre"
+          ><code class="modal__code language-js">// Initialize a new modal
 const modal = new Onlay({
   content: &#x22;&#x3C;h2&#x3E;Modal Content&#x3C;/h2&#x3E;&#x22;,
   // Use either &#x22;content&#x22; or &#x22;templateId&#x22;. If both are set, &#x22;content&#x22; takes precedence.
@@ -124,182 +121,187 @@ modal.addFooterButton(&#x22;Close&#x22;, &#x22;modal__btn-custom&#x22;, () =&#x3
 
 // open modal
 modal.open();</code></pre>
-            <p class="modal__desc">
-              Khi khởi tạo modal, bắt buộc phải truyền "content" hoặc
-              "templateId", nếu cả 2 được cung cấp, "content" sẽ được ưu tiên,
-              nếu chỉ cung cấp "templateId" hãy đảm bảo rằng truyền đúng "id"
-              trên trang HTML
-            </p>
-            <pre
-              class="modal__pre"
-            ><code class="modal__code language-html">&#x3C;template id=&#x22;template-content&#x22;&#x3E;
+          <p class="modal__desc">
+            Khi khởi tạo modal, bắt buộc phải truyền "content" hoặc
+            "templateId", nếu cả 2 được cung cấp, "content" sẽ được ưu tiên, nếu
+            chỉ cung cấp "templateId" hãy đảm bảo rằng truyền đúng "id" trên
+            trang HTML
+          </p>
+          <pre
+            class="modal__pre"
+          ><code class="modal__code language-html">&#x3C;template id=&#x22;template-content&#x22;&#x3E;
       &#x3C;h2&#x3E;Template Content&#x3C;/h2&#x3E;
     &#x3C;/template&#x3E;</code></pre>
-            <h3 class="modal__title">Chú thích về các thuộc tính khởi tạo</h3>
-            <table class="modal__option modal__table">
-              <thead class="modal__option--head modal__table--head">
-                <tr>
-                  <th class="modal__option--title modal__table--title">
-                    Property
-                  </th>
-                  <th class="modal__option--title modal__table--title">Type</th>
-                  <th class="modal__option--title modal__table--title">
-                    Description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>content, templateId</td>
-                  <td>string</td>
-                  <td>
-                    Sử dụng "content" hoặc "templateId". Nếu cả hai đều được
-                    thiết lập, "content" sẽ được ưu tiên.
-                  </td>
-                </tr>
-                <tr>
-                  <td>cssClass</td>
-                  <td>array</td>
-                  <td>
-                    Giá trị mặc định là mảng rỗng, có thể truyền vào mảng giá
-                    trị chuỗi, giá trị này sẽ là class để bạn tuỳ chỉnh css cho
-                    ".onlay__container"
-                  </td>
-                </tr>
-                <tr>
-                  <td>footer</td>
-                  <td>boolean</td>
-                  <td>
-                    Giá trị mặc định là "false", khi bạn truyền "true", modal sẽ
-                    cho phép add button vào footer hoặc set lại content cho
-                    footer bằng method addButtonFooter(), setFooterContent()
-                  </td>
-                </tr>
-                <tr>
-                  <td>destroyOnClose</td>
-                  <td>boolean</td>
-                  <td>
-                    Giá trị mặc định là "false", khi truyền là "true" khi đóng
-                    modal HTML DOM sẽ không bị xoá khi đóng modal và ngược lại
-                  </td>
-                </tr>
-                <tr>
-                  <td>closeMethods</td>
-                  <td>array</td>
-                  <td>
-                    Giá trị mặc định là mảng ["button", "overlay", "escape"],
-                    "button" tương ứng với cho phép đóng modal bằng nút button
-                    close, "overlay" cho phép đóng modal bằng cách click vào lớp
-                    phủ overlay, "escape" cho phép đóng modal bằng cách nhấn
-                    phím Esc trên bàn phím, nếu xoá các giá trị này modal sẽ
-                    không cho phép đóng tương ứng với giá trị đã xoá
-                  </td>
-                </tr>
-                <tr>
-                  <td>onOpen</td>
-                  <td>function</td>
-                  <td>Hàm sẽ đươc gọi sau khi modal được mở</td>
-                </tr>
-                <tr>
-                  <td>onClose</td>
-                  <td>function</td>
-                  <td>Hàm sẽ được gọi sau khi modal đóng</td>
-                </tr>
+          <h3 class="modal__title">Chú thích về các thuộc tính khởi tạo</h3>
+          <table class="modal__option modal__table">
+            <thead class="modal__option--head modal__table--head">
+              <tr>
+                <th class="modal__option--title modal__table--title">
+                  Property
+                </th>
+                <th class="modal__option--title modal__table--title">Type</th>
+                <th class="modal__option--title modal__table--title">
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>content, templateId</td>
+                <td>string</td>
+                <td>
+                  Sử dụng <code>content</code> hoặc <code>templateId</code>. Nếu
+                  cả hai đều được thiết lập, "content" sẽ được ưu tiên.
+                </td>
+              </tr>
+              <tr>
+                <td>cssClass</td>
+                <td>array</td>
+                <td>
+                  Giá trị mặc định là mảng rỗng, có thể truyền vào mảng giá trị
+                  chuỗi, giá trị này sẽ là class để bạn tuỳ chỉnh css cho
+                  <code>.onlay__container</code>
+                </td>
+              </tr>
+              <tr>
+                <td>footer</td>
+                <td>boolean</td>
+                <td>
+                  Giá trị mặc định là <code>false</code>, khi bạn truyền
+                  <code>true</code>, modal sẽ cho phép add button vào footer
+                  hoặc set lại content cho footer bằng method
+                  <code>addButtonFooter()</code>,
+                  <code>setFooterContent()</code>
+                </td>
+              </tr>
+              <tr>
+                <td>destroyOnClose</td>
+                <td>boolean</td>
+                <td>
+                  Giá trị mặc định là <code>false</code>, khi truyền là
+                  <code>true</code> khi đóng modal HTML DOM sẽ không bị xoá khi
+                  đóng modal và ngược lại
+                </td>
+              </tr>
+              <tr>
+                <td>closeMethods</td>
+                <td>array</td>
+                <td>
+                  Giá trị mặc định là mảng
+                  <code>["button", "overlay", "escape"]</code>,
+                  <code>"button"</code> tương ứng với cho phép đóng modal bằng
+                  nút button close, <code>"overlay"</code> cho phép đóng modal
+                  bằng cách click vào lớp phủ overlay, <code>"escape"</code> cho
+                  phép đóng modal bằng cách nhấn phím Esc trên bàn phím, nếu xoá
+                  các giá trị này modal sẽ không cho phép đóng tương ứng với giá
+                  trị đã xoá
+                </td>
+              </tr>
+              <tr>
+                <td>onOpen</td>
+                <td>function</td>
+                <td>Hàm sẽ đươc gọi sau khi modal được mở</td>
+              </tr>
+              <tr>
+                <td>onClose</td>
+                <td>function</td>
+                <td>Hàm sẽ được gọi sau khi modal đóng</td>
+              </tr>
 
-                <tr>
-                  <td>enableLockTarget</td>
-                  <td>boolean</td>
-                  <td>
-                    Mặc định sẽ là "true", khi là "true" mở modal sẽ khoá cuộn
-                    và ngược lại
-                  </td>
-                </tr>
-                <tr>
-                  <td>scrollLockTarget</td>
-                  <td>function</td>
-                  <td>
-                    Hàm mặc định return về document.body, có thể thay đổi phần
-                    tử trả về để áp dụng khoá cuộn
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-        <!-- api  -->
-        <section id="modal__api" class="modal__section">
-          <div class="modal__container">
-            <h2 class="modal__title">4. API</h2>
-            <table class="modal__option modal__table">
-              <thead class="modal__option--head modal__table--head">
-                <tr>
-                  <th class="modal__option--title modal__table--title">
-                    Method
-                  </th>
-                  <th class="modal__table--title">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>open()</td>
-                  <td>Dùng để mở modal</td>
-                </tr>
-                <tr>
-                  <td>close(boolean)</td>
-                  <td>
-                    Dùng để đóng modal, có thể không truyền tham số, khi không
-                    truyền thì giá trị mặc định là "false", khi là "fasle" lúc
-                    đóng modal code sẽ được xoá khỏi DOM và ngược lại
-                  </td>
-                </tr>
-                <tr>
-                  <td>destroy()</td>
-                  <td>Dùng để đóng modal và code sẽ được xoá khỏi DOM</td>
-                </tr>
-                <tr>
-                  <td>setContent(content)</td>
-                  <td>
-                    Dùng để set lại content cho modal, typeof content ===
-                    "string"
-                  </td>
-                </tr>
-                <tr>
-                  <td>setFooterContent(content)</td>
-                  <td>
-                    Dùng để set lại content cho footer, typeof content ===
-                    "string"
-                  </td>
-                </tr>
-                <tr>
-                  <td>addFooterButton(title, cssClass, callback)</td>
-                  <td>
-                    Dùng để add button cho footer, title = string là tiêu đề của
-                    button, cssClas là mảng chứa các class để custom cho button,
-                    callback là hàm được gọi sau khi onclick button
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </main>
-      <!-- footer  -->
-      <footer id="modal__footer">
-        <div class="modal__container">
-          <p class="modal__desc">
-            Đây là một dự án nhỏ được code hoàn toàn bằng Javascript, tham khảo
-            source dự án tại
-            <a
-              class="modal__footer-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/dinhluckyboy/onlay"
-              >Github</a
-            >
-          </p>
+              <tr>
+                <td>enableLockTarget</td>
+                <td>boolean</td>
+                <td>
+                  Mặc định sẽ là <code>true</code>, khi là <code>true</code> mở
+                  modal sẽ khoá cuộn và ngược lại
+                </td>
+              </tr>
+              <tr>
+                <td>scrollLockTarget</td>
+                <td>function</td>
+                <td>
+                  Hàm mặc định return về <code>document.body</code>, có thể thay
+                  đổi phần tử trả về để áp dụng khoá cuộn
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </footer>
-    </div>
+      </section>
+      <!-- api  -->
+      <section id="modal__api" class="modal__section">
+        <div class="modal__container">
+          <h2 class="modal__title">4. API</h2>
+          <table class="modal__option modal__table">
+            <thead class="modal__option--head modal__table--head">
+              <tr>
+                <th class="modal__option--title modal__table--title">Method</th>
+                <th class="modal__table--title">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>open()</td>
+                <td>Dùng để mở modal</td>
+              </tr>
+              <tr>
+                <td>close(boolean)</td>
+                <td>
+                  Dùng để đóng modal, có thể không truyền tham số, khi không
+                  truyền thì giá trị mặc định là <code>false</code>, khi là
+                  <code>false</code> lúc đóng modal code sẽ được xoá khỏi DOM và
+                  ngược lại
+                </td>
+              </tr>
+              <tr>
+                <td>destroy()</td>
+                <td>Dùng để đóng modal và code sẽ được xoá khỏi DOM</td>
+              </tr>
+              <tr>
+                <td>setContent(content)</td>
+                <td>
+                  Dùng để set lại content cho modal,
+                  <code>typeof content === "string"</code>
+                </td>
+              </tr>
+              <tr>
+                <td>setFooterContent(content)</td>
+                <td>
+                  Dùng để set lại content cho footer,
+                  <code>typeof content === "string"</code>
+                </td>
+              </tr>
+              <tr>
+                <td>addFooterButton(title, cssClass, callback)</td>
+                <td>
+                  Dùng để add button cho footer,
+                  <code>typeof title === "string"</code> là tiêu đề của button,
+                  cssClas là mảng chứa các class để custom cho button, callback
+                  là hàm được gọi sau khi onclick button
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <!-- footer  -->
+    <footer id="modal__footer">
+      <div class="modal__container">
+        <p class="modal__desc">
+          Đây là một dự án nhỏ được code hoàn toàn bằng Javascript, tham khảo
+          source dự án tại
+          <a
+            class="modal__footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/dinhluckyboy/onlay"
+            >Github</a
+          >
+        </p>
+      </div>
+    </footer>
+
     <!-- 1 basic modal  -->
     <template id="modal__onlay-basic" class="template__modal">
       <h2 class="template__title">Basic Modal</h2>
@@ -467,9 +469,9 @@ modal.open();</code></pre>
     <template id="template-content">
       <h2>Template Content</h2>
     </template>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/dinhluckyboy/onlay@main/onlay.min.js"></script> -->
+    <!-- hightlight code pre  -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
     <script src="./onlay.js"></script>
     <script src="./assets/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
   </body>
 </html>
