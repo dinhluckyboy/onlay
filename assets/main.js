@@ -3,6 +3,9 @@ const basicBtn = document.querySelector(".modal__btn--basic");
 const modalBasic = new Onlay({
   templateId: "modal__onlay-basic",
   enableScrollLock: false,
+  scrollLockTarget: () => {
+    return document.querySelector(".modal__wrapper");
+  },
 });
 basicBtn.onclick = () => {
   modalBasic.open();
@@ -14,6 +17,9 @@ const modalWithButtons = new Onlay({
   templateId: "modal__onlay-button",
   footer: true,
   closeMethods: ["button", "escape"],
+  scrollLockTarget: () => {
+    return document.querySelector(".modal__wrapper");
+  },
 });
 modalWithButtons.addFooterButton(
   "Cancel",
@@ -39,6 +45,9 @@ withButtonsBtn.onclick = () => {
 const largeContentBtn = document.querySelector(".modal__btn--large");
 const modalLargeContent = new Onlay({
   templateId: "modal__onlay-large",
+  scrollLockTarget: () => {
+    return document.querySelector(".modal__wrapper");
+  },
 });
 largeContentBtn.onclick = () => {
   modalLargeContent.open();
@@ -48,7 +57,9 @@ largeContentBtn.onclick = () => {
 const multipleBtn = document.querySelector(".modal__btn--multiple");
 const modalMultiple = new Onlay({
   templateId: "modal__onlay-multiple",
-  enableScrollLock: false,
+  scrollLockTarget: () => {
+    return document.querySelector(".modal__wrapper");
+  },
 });
 multipleBtn.onclick = () => {
   modalMultiple.open();
@@ -58,6 +69,9 @@ multipleBtn.onclick = () => {
 const embedBtn = document.querySelector(".modal__btn--embed");
 const modalEmbed = new Onlay({
   templateId: "modal__onlay-embed",
+  scrollLockTarget: () => {
+    return document.querySelector(".modal__wrapper");
+  },
 });
 embedBtn.onclick = () => {
   modalEmbed.open();
@@ -68,6 +82,9 @@ const persistentBtn = document.querySelector(".modal__btn--persistent");
 const modalPersistent = new Onlay({
   templateId: "modal__onlay-persistent",
   destroyOnClose: false,
+  scrollLockTarget: () => {
+    return document.querySelector(".modal__wrapper");
+  },
 });
 persistentBtn.onclick = () => {
   modalPersistent.open();
@@ -78,6 +95,9 @@ const contentOutsideBtn = document.querySelector(".modal__btn--outside");
 const modalContentOutside = new Onlay({
   content: "<h2>Content Input From JS</h2>",
   templateId: "template-2",
+  scrollLockTarget: () => {
+    return document.querySelector(".modal__wrapper");
+  },
 });
 contentOutsideBtn.onclick = () => {
   modalContentOutside.open();

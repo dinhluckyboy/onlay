@@ -18,6 +18,9 @@ function Onlay(option = {}) {
       closeMethods: ["button", "overlay", "escape"],
       destroyOnClose: true,
       enableScrollLock: true,
+      scrollLockTarget: () => {
+        return document.body;
+      },
       cssClass: [],
       // onOpen,
       // onClose,
@@ -40,6 +43,7 @@ function Onlay(option = {}) {
 
   this._footerButton = [];
   this._content;
+  this._scrollTarget = this.opt.scrollLockTarget();
 }
 
 // -----------------
@@ -126,11 +130,15 @@ Onlay.prototype.open = function () {
     document.addEventListener("keydown", this._handelEscapeClose);
   }
 
-  if (this.opt.enableScrollLock) {
+  if (this.opt.enableScrollLock && this.hasScrollBar()) {
     // disable scroll
-    document.body.classList.add("onlay--no-scroll");
+    this._scrollTarget.classList.add("onlay--no-scroll");
     //padding right scroll bar
-    document.body.style.paddingRight = this._getScrollBar() + "px";
+    const paddingRight = parseInt(
+      getComputedStyle(this._scrollTarget).paddingRight
+    );
+    this._scrollTarget.style.paddingRight =
+      paddingRight + this._getScrollBar() + "px";
   }
 
   // onOpen
@@ -154,7 +162,6 @@ Onlay.prototype.setContent = function (content) {
     this._modalContent.innerHTML = this._content;
   }
 };
-console.log(this._modalContent);
 
 Onlay.prototype.close = function (destroy = this.opt.destroyOnClose) {
   if (this._allowEscapeClose) {
@@ -178,11 +185,15 @@ Onlay.prototype.close = function (destroy = this.opt.destroyOnClose) {
     if (typeof this.opt.onClose === "function") {
       this.opt.onClose();
     }
-    if (!Onlay.elements.length && this.opt.enableScrollLock) {
+    if (
+      !Onlay.elements.length &&
+      this.opt.enableScrollLock &&
+      this.hasScrollBar()
+    ) {
       // enable scroll
-      document.body.classList.remove("onlay--no-scroll");
+      this._scrollTarget.classList.remove("onlay--no-scroll");
       //remove padding right scroll bar
-      document.body.style.paddingRight = "";
+      this._scrollTarget.style.paddingRight = "";
     } // Onlay.length = 0 thi show scroll bar
   });
 };
@@ -212,6 +223,10 @@ Onlay.prototype._getScrollBar = function () {
   this._scrollBarWidth = div.offsetWidth - div.clientWidth;
   document.body.removeChild(div);
   return this._scrollBarWidth;
+};
+
+Onlay.prototype.hasScrollBar = function () {
+  return this._scrollTarget.scrollHeight > this._scrollTarget.clientHeight;
 };
 
 Onlay.prototype.setFooterContent = function (html) {
