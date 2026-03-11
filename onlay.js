@@ -130,7 +130,11 @@ Onlay.prototype.open = function () {
     document.addEventListener("keydown", this._handelEscapeClose);
   }
 
-  if (this.opt.enableScrollLock && this.hasScrollBar()) {
+  if (
+    Onlay.elements.length === 1 && // chỉ thêm padding cho scroll bar ở lần mở modal đầu tiên,
+    this.opt.enableScrollLock &&
+    this.hasScrollBar()
+  ) {
     // disable scroll
     this._scrollTarget.classList.add("onlay--no-scroll");
     //padding right scroll bar
