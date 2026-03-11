@@ -76,7 +76,7 @@ persistentBtn.onclick = () => {
 const contentOutsideBtn = document.querySelector(".modal__btn--outside");
 const modalContentOutside = new Onlay({
   content: "<h2>Content Input From JS</h2>",
-  templateId: "template-2",
+  //   templateId: "template-2",
 });
 contentOutsideBtn.onclick = () => {
   modalContentOutside.open();
