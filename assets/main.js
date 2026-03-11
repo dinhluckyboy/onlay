@@ -56,6 +56,7 @@ multipleBtn.onclick = () => {
 const embedBtn = document.querySelector(".modal__btn--embed");
 const modalEmbed = new Onlay({
   templateId: "modal__onlay-embed",
+  destroyOnClose: false,
 });
 embedBtn.onclick = () => {
   modalEmbed.open();
