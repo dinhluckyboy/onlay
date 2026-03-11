@@ -75,7 +75,8 @@ persistentBtn.onclick = () => {
 // 7 Input Content
 const contentOutsideBtn = document.querySelector(".modal__btn--outside");
 const modalContentOutside = new Onlay({
-  content: "<h2>Content Input From JS</h2>",
+  content:
+    "<h2>Content Input From JS</h2><p>Nội dung từ modal này được thêm từ option content</p>",
   //   templateId: "template-2",
 });
 contentOutsideBtn.onclick = () => {
